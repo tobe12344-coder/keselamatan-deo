@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keselamatan DEO — Animasi Interaktif & Scroll Experience</title>
+  <meta name="description"
+    content="Eksplorasi visual interaktif keselamatan penerbangan dengan efek parallax, 3D scroll, dan animasi modern.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Plus+Jakarta+Sans:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 1. Progress Scroll Bar -->
+  <div class="progress-bar" id="progress-bar"></div>
+
+  <!-- HERO SECTION DENGAN EFEK PARALLAX -->
+  <header class="parallax-hero" id="parallax-container">
+    <!-- Logo Pertamina -->
+    <div class="logo-pertamina" id="layer-moon"></div>
+
+    <!-- Gunung Belakang -->
+    <div class="parallax-layer" id="layer-mountain-back">
+      <img src="gunung1.png" class="img-mountain" alt="Gunung Belakang">
+    </div>
+
+    <!-- Teks di Tengah -->
+    <h1 class="parallax-text" id="layer-text">AFT DEO SORONG</h1>
+
+    <!-- Gunung Tengah -->
+    <div class="parallax-layer" id="layer-mountain-mid">
+      <img src="bangunan.png" class="img-mountain-mid" alt="Gunung Tengah">
+    </div>
+
+    <!-- Gunung Depan (Paling Gelap) -->
+    <div class="parallax-layer" id="layer-mountain-front">
+
+      <div class="fog"></div>
+    </div>
+  </header>
+
+  <!-- 2. TICKER / MARQUEE EFFECT - PENGHALANG AREA TERBATAS -->
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <span class="text-4xl md:text-6xl font-black text-black mx-8 uppercase tracking-widest">⚠ ANDA MEMASUKI ⚠</span>
+      <span class="text-4xl md:text-6xl font-black text-black mx-8 uppercase tracking-widest">AREA TERBATAS</span>
+      <span class="text-4xl md:text-6xl font-black text-black mx-8 uppercase tracking-widest">⚠ ANDA MEMASUKI ⚠</span>
+      <span class="text-4xl md:text-6xl font-black text-black mx-8 uppercase tracking-widest">AREA TERBATAS</span>
+      <!-- Duplikat -->
+      <span class="text-4xl md:text-6xl font-black text-black mx-8 uppercase tracking-widest">⚠ ANDA MEMASUKI ⚠</span>
+      <span class="text-4xl md:text-6xl font-black text-black mx-8 uppercase tracking-widest">AREA TERBATAS</span>
+      <span class="text-4xl md:text-6xl font-black text-black mx-8 uppercase tracking-widest">⚠ ANDA MEMASUKI ⚠</span>
+      <span class="text-4xl md:text-6xl font-black text-black mx-8 uppercase tracking-widest">AREA TERBATAS</span>
+    </div>
+  </div>
+
+  <!-- 1. BAGIAN EFEK ZOOM THROUGH SCROLL (Menembus Masuk) -->
+  <section class="zoom-section" id="zoom-section">
+    <div class="zoom-sticky">
+
+      <!-- LAYER BELAKANG: Halaman berikutnya yang disembunyikan di balik portal -->
+      <div class="zoom-bg" id="zoom-bg">
+        <img
+          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+          alt="New Dimension" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen"
+          onerror="this.style.display='none'">
+        <h2 class="text-6xl md:text-8xl font-black text-white relative z-10 tracking-tighter drop-shadow-2xl">DUNIA
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">BARU</span>
+        </h2>
+        <p class="text-2xl text-slate-300 relative z-10 mt-4 font-semibold">Anda telah berhasil menembus portal.</p>
+      </div>
+
+      <!-- LAYER DEPAN: Layar yg bolong di tengah -->
+      <div class="zoom-front" id="zoom-front">
+        <div class="center-logo"></div>
+        <div class="zoom-portal flex items-center justify-center">
+          <span class="text-cyan-400 font-bold tracking-widest text-sm animate-pulse"></span>
+        </div>
+
+        <!-- Teks Instruksi di luar portal -->
+        <div class="absolute top-32 text-center w-full z-20 pointer-events-none drop-shadow-md">
+          <p class="text-white text-2xl md:text-3xl mb-4" style="font-family: 'Playfair Display', serif; font-style: italic;">Selamat Datang di</p>
+          <h2 class="text-5xl md:text-6xl font-black text-white mb-2 tracking-tight drop-shadow-lg">AVIATION FUEL TERMINAL</h2>
+          <h2 class="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight drop-shadow-lg">DEO SORONG</h2>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. BAGIAN EFEK FEY-STYLE SCROLL (STICKY SEQUENCE) -->
+  <section class="fey-section" id="fey-section">
+    <div class="fey-sticky flex flex-col md:flex-row max-w-7xl mx-auto w-full px-6 gap-10">
+
+      <!-- Sisi Kiri: Teks yang berubah berurutan -->
+      <div class="md:w-1/2 relative h-[250px] md:h-[400px] flex items-center justify-start mt-20 md:mt-0">
+
+        <!-- Step 1 -->
+        <div class="fey-text-step active" id="fey-text-0">
+          <div
+            class="inline-block px-4 py-1.5 mb-6 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-400 text-sm font-bold tracking-widest uppercase">
+            Fitur 01</div>
+          <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">Analisis <br><span
+              class="text-slate-600">Mendalam</span></h2>
+          <p class="text-xl text-slate-400 max-w-md leading-relaxed">Dapatkan wawasan instan dengan antarmuka yang
+            dirancang untuk kecepatan. Data diproses secara real-time di layar Anda.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="fey-text-step" id="fey-text-1">
+          <div
+            class="inline-block px-4 py-1.5 mb-6 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-bold tracking-widest uppercase">
+            Fitur 02</div>
+          <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">Keamanan <br><span
+              class="text-slate-600">Terenskripsi</span></h2>
+          <p class="text-xl text-slate-400 max-w-md leading-relaxed">Sistem berlapis dengan teknologi enkripsi
+            end-to-end. Memastikan setiap transaksi dan data Anda aman dari ancaman.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="fey-text-step" id="fey-text-2">
+          <div
+            class="inline-block px-4 py-1.5 mb-6 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-sm font-bold tracking-widest uppercase">
+            Fitur 03</div>
+          <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">Sinkronisasi <br><span
+              class="text-slate-600">Otomatis</span></h2>
+          <p class="text-xl text-slate-400 max-w-md leading-relaxed">Lanjutkan pekerjaan Anda di perangkat apa pun tanpa
+            hambatan. Perubahan tersimpan dalam hitungan milidetik secara cloud.</p>
+        </div>
+
+      </div>
+
+      <!-- Sisi Kanan: Visual / Gambar yang bertransisi -->
+      <div class="md:w-1/2 flex items-center justify-center w-full h-[350px] md:h-full pb-20 md:pb-0">
+        <!-- Kontainer Visual dengan gaya Frame / Card modern -->
+        <div
+          class="relative w-full max-w-[500px] aspect-square md:aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] border border-white/5 bg-[#0a0a0a]">
+
+          <div class="fey-visual-step active" id="fey-visual-0">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#03010a] via-transparent to-transparent z-10 opacity-60">
+            </div>
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Data Analytics" class="w-full h-full object-cover"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#1e1b4b,#312e81)'">
+          </div>
+
+          <div class="fey-visual-step" id="fey-visual-1">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#03010a] via-transparent to-transparent z-10 opacity-60">
+            </div>
+            <img
+              src="https://images.unsplash.com/photo-1614064641913-a53f93ee7ba8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Security" class="w-full h-full object-cover"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#0c4a6e,#155e75)'">
+          </div>
+
+          <div class="fey-visual-step" id="fey-visual-2">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#03010a] via-transparent to-transparent z-10 opacity-60">
+            </div>
+            <img
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Sync Server" class="w-full h-full object-cover"
+              onerror="this.parentElement.style.background='linear-gradient(135deg,#064e3b,#065f46)'">
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. BAGIAN 3D SPIRAL SCROLL -->
+  <section class="spiral-section" id="spiral-section">
+    <div class="spiral-sticky">
+      <div class="absolute top-20 text-center z-20 w-full px-6 pointer-events-none">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">Galeri 3D
+          Interaktif</h2>
+        <p class="text-cyan-400 font-semibold tracking-wide drop-shadow-md">Terus scroll untuk memutar ruang</p>
+      </div>
+
+      <div class="spiral-container" id="spiral-container">
+        <!-- Posisi rotasi melingkar kartu akan diatur otomatis oleh JavaScript -->
+        <div class="spiral-item">
+          <span class="text-7xl mb-6">🚀</span>
+          <h3 class="text-2xl font-bold text-cyan-400 mb-2">Melesat</h3>
+          <p class="text-slate-300 text-center px-4">Kecepatan tinggi menembus batas</p>
+        </div>
+        <div class="spiral-item">
+          <span class="text-7xl mb-6">🌌</span>
+          <h3 class="text-2xl font-bold text-purple-400 mb-2">Dimensi</h3>
+          <p class="text-slate-300 text-center px-4">Melintasi ruang dan waktu nyata</p>
+        </div>
+        <div class="spiral-item">
+          <span class="text-7xl mb-6">💎</span>
+          <h3 class="text-2xl font-bold text-emerald-400 mb-2">Estetika</h3>
+          <p class="text-slate-300 text-center px-4">Karya seni digital memanjakan mata</p>
+        </div>
+        <div class="spiral-item">
+          <span class="text-7xl mb-6">🔥</span>
+          <h3 class="text-2xl font-bold text-rose-400 mb-2">Performa</h3>
+          <p class="text-slate-300 text-center px-4">Ditenagai oleh GPU Acceleration</p>
+        </div>
+        <div class="spiral-item">
+          <span class="text-7xl mb-6">⚡</span>
+          <h3 class="text-2xl font-bold text-yellow-400 mb-2">Presisi</h3>
+          <p class="text-slate-300 text-center px-4">Akurasi tinggi di setiap sudut</p>
+        </div>
+        <div class="spiral-item">
+          <span class="text-7xl mb-6">🔮</span>
+          <h3 class="text-2xl font-bold text-indigo-400 mb-2">Visioner</h3>
+          <p class="text-slate-300 text-center px-4">Melihat jauh ke masa depan web</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BAGIAN EFEK HORIZONTAL SCROLL -->
+  <section class="horizontal-section" id="horizontal-section">
+    <div class="horizontal-sticky">
+      <!-- Track ini yang akan digeser ke kiri menggunakan JavaScript -->
+      <div class="horizontal-track" id="horizontal-track">
+
+        <!-- Panel 1 -->
+        <div class="horizontal-panel bg-[#0b061f]">
+          <div
+            class="inline-block px-4 py-1.5 mb-6 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-400 text-sm font-bold tracking-widest uppercase">
+            Scroll Hijacking</div>
+          <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 text-center leading-tight">Horizontal <br><span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500">Scroll</span></h2>
+          <p class="text-xl text-slate-400 max-w-2xl text-center">Terkadang, bergerak ke samping memberikan perspektif
+            yang berbeda. Scroll terus ke bawah untuk menggeser layar ini ke kiri.</p>
+        </div>
+
+        <!-- Panel 2 -->
+        <div class="horizontal-panel bg-gradient-to-br from-indigo-900/30 to-[#0b061f]">
+          <div
+            class="glass-card p-12 rounded-3xl max-w-lg text-center border-indigo-500/30 shadow-[0_0_50px_rgba(79,70,229,0.15)] relative overflow-hidden">
+            <div class="absolute -top-20 -right-20 w-40 h-40 bg-indigo-500 rounded-full blur-[60px] opacity-30"></div>
+            <span class="text-6xl mb-6 block drop-shadow-lg">🎨</span>
+            <h3 class="text-3xl font-bold text-white mb-4">Kanvas Ekstra Luas</h3>
+            <p class="text-slate-300 text-lg leading-relaxed">Sangat cocok untuk menampilkan garis waktu (timeline),
+              portofolio, perjalanan produk, atau galeri gambar yang memanjang.</p>
+          </div>
+        </div>
+
+        <!-- Panel 3 -->
+        <div class="horizontal-panel bg-gradient-to-br from-purple-900/30 to-[#0b061f]">
+          <div
+            class="glass-card p-12 rounded-3xl max-w-lg text-center border-purple-500/30 shadow-[0_0_50px_rgba(168,85,247,0.15)] relative overflow-hidden">
+            <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-500 rounded-full blur-[60px] opacity-30"></div>
+            <span class="text-6xl mb-6 block drop-shadow-lg">📱</span>
+            <h3 class="text-3xl font-bold text-white mb-4">Interaksi Native</h3>
+            <p class="text-slate-300 text-lg leading-relaxed">Efek ini meniru kebiasaan <em>swipe</em> di perangkat
+              seluler, memberikan pengalaman visual yang organik bahkan untuk pengguna desktop.</p>
+          </div>
+        </div>
+
+        <!-- Panel 4 -->
+        <div class="horizontal-panel bg-[#0b061f]">
+          <div class="text-center relative z-10">
+            <h2
+              class="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500 mb-6 drop-shadow-sm">
+              Terus Melangkah</h2>
+            <p class="text-xl text-slate-400 max-w-2xl text-center mx-auto mb-10">Lanjutkan scroll vertikal Anda untuk
+              kembali ke perjalanan utama ke bawah.</p>
+
+            <div class="animate-bounce flex justify-center">
+              <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center border border-white/20">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TEXT REVEAL EFFECT -->
+  <section class="text-reveal-section" id="text-reveal-section">
+    <div class="text-reveal-sticky max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight" id="reveal-text">
+        Masa depan antarmuka web ada di ujung jari Anda. Setiap scroll menceritakan sebuah kisah visual yang memukau,
+        mengubah pengunjung statis menjadi penjelajah interaktif.
+      </h2>
+    </div>
+  </section>
+
+  <!-- 4. OBJECT OVERLAY / STACKING CARDS -->
+  <section class="stack-section max-w-4xl mx-auto">
+    <div class="text-center mb-32 animate-on-scroll reveal-up">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Efek Stacking</h2>
+      <p class="text-xl text-slate-400">Terus gulir ke bawah untuk menumpuk kartu-kartu ini menggunakan properti CSS
+        <code class="bg-white/10 px-2 py-1 rounded">position: sticky</code>.
+      </p>
+    </div>
+
+    <!-- Kartu 1 -->
+    <div class="stack-card-item glass-card p-12 rounded-[2rem] border border-cyan-500/30"
+      style="top: 15vh; background: #081229; transform: scale(1);">
+      <div class="flex justify-between items-center mb-8">
+        <span class="text-4xl">01</span>
+        <span class="bg-cyan-500/20 text-cyan-400 px-4 py-1 rounded-full text-sm font-bold">Lapisan Dasar</span>
+      </div>
+      <h3 class="text-3xl font-bold text-white mb-4">Fondasi Kuat</h3>
+      <p class="text-slate-400 text-lg">Kartu pertama ini akan tertahan di layar dan menjadi alas bagi kartu-kartu
+        berikutnya yang datang dari bawah.</p>
+    </div>
+
+    <!-- Kartu 2 -->
+    <div class="stack-card-item glass-card p-12 rounded-[2rem] border border-purple-500/30"
+      style="top: 18vh; background: #1a0b2e; transform: scale(0.98);">
+      <div class="flex justify-between items-center mb-8">
+        <span class="text-4xl">02</span>
+        <span class="bg-purple-500/20 text-purple-400 px-4 py-1 rounded-full text-sm font-bold">Lapisan Tengah</span>
+      </div>
+      <h3 class="text-3xl font-bold text-white mb-4">Tumpukan Dinamis</h3>
+      <p class="text-slate-400 text-lg">Hanya dengan mengatur sedikit offset top, kartu ini secara otomatis bertumpuk di
+        atas kartu pertama tanpa JavaScript kompleks.</p>
+    </div>
+
+    <!-- Kartu 3 -->
+    <div class="stack-card-item glass-card p-12 rounded-[2rem] border border-emerald-500/30"
+      style="top: 21vh; background: #061f14; transform: scale(0.96);">
+      <div class="flex justify-between items-center mb-8">
+        <span class="text-4xl">03</span>
+        <span class="bg-emerald-500/20 text-emerald-400 px-4 py-1 rounded-full text-sm font-bold">Lapisan Puncak</span>
+      </div>
+      <h3 class="text-3xl font-bold text-white mb-4">Efek Estetik</h3>
+      <p class="text-slate-400 text-lg">Hasilnya adalah efek tumpukan 3D yang sangat halus dan responsif terhadap
+        pergerakan scroll pengguna secara natural.</p>
+    </div>
+
+    <!-- Ruang ekstra agar kartu terakhir bisa tertahan lama -->
+    <div class="h-[20vh]"></div>
+  </section>
+
+  <!-- 5. STICKY PINNING (Kiri Diam, Kanan Scroll) -->
+  <section class="pinning-section max-w-7xl mx-auto px-6 gap-12">
+    <!-- Kolom Kiri yang Terkunci (Pinned) -->
+    <div class="md:w-1/3 pinning-left">
+      <h2 class="text-5xl font-bold text-white mb-6">Sticky <br><span class="text-cyan-400">Pinning</span></h2>
+      <p class="text-slate-400 text-lg mb-8">Sisi kiri ini akan terkunci (pinned) sementara Anda membaca penjelasan
+        panjang di sisi kanan.</p>
+      <div
+        class="w-full h-64 rounded-3xl bg-gradient-to-tr from-cyan-600 to-purple-600 relative overflow-hidden flex items-center justify-center shadow-2xl">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <svg class="w-20 h-20 text-white relative z-10 animate-spin-slow" style="animation: spin 10s linear infinite;"
+          fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+          </path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
+          </path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Kolom Kanan yang Bisa Di-scroll -->
+    <div class="md:w-2/3 space-y-24 py-10">
+      <div class="glass-card p-10 rounded-3xl">
+        <h3 class="text-3xl font-bold text-white mb-4">Informasi Bagian 1</h3>
+        <p class="text-slate-400 text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+          do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="glass-card p-10 rounded-3xl">
+        <h3 class="text-3xl font-bold text-white mb-4">Informasi Bagian 2</h3>
+        <p class="text-slate-400 text-lg leading-relaxed">Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="glass-card p-10 rounded-3xl">
+        <h3 class="text-3xl font-bold text-white mb-4">Informasi Bagian 3</h3>
+        <p class="text-slate-400 text-lg leading-relaxed">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+          architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SCROLL-DRIVEN PATH ANIMATION -->
+  <section class="path-section" id="path-section">
+    <div class="path-sticky">
+      <div class="absolute text-center z-20 w-full pointer-events-none drop-shadow-2xl">
+        <h2 class="text-5xl font-bold text-white mb-2">Tarik Garisnya</h2>
+        <p class="text-cyan-400 font-semibold">Scroll untuk menggambar SVG secara ajaib</p>
+      </div>
+
+      <!-- Garis SVG -->
+      <svg viewBox="0 0 1000 500" class="w-full h-full max-w-5xl opacity-50 relative z-10"
+        preserveAspectRatio="xMidYMid meet">
+        <!-- Garis dasar tipis (jalur pudar) -->
+        <path d="M 100,250 C 300,50 400,450 600,250 C 800,50 900,450 1000,250" fill="none"
+          stroke="rgba(255,255,255,0.1)" stroke-width="4" stroke-linecap="round"></path>
+        <!-- Garis utama yang akan tergambar (Cyan) -->
+        <path id="animated-path" d="M 100,250 C 300,50 400,450 600,250 C 800,50 900,450 1000,250" fill="none"
+          stroke="#22d3ee" stroke-width="12" stroke-linecap="round" style="filter: drop-shadow(0 0 15px #22d3ee);">
+        </path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 7. KINETIC TYPOGRAPHY (Scroll-Opposite Marquee) -->
+  <section class="kinetic-section" id="kinetic-section">
+    <!-- Efek shadow pudar di atas dan bawah -->
+    <div class="absolute inset-x-0 top-0 bg-gradient-to-b from-[#0b061f] to-transparent z-10 h-32 pointer-events-none">
+    </div>
+
+    <div class="kinetic-row" id="k-row-1">
+      <span class="kinetic-text">DESIGN DEVELOPMENT INTERACTION </span>
+      <span class="kinetic-text filled">DESIGN </span>
+      <span class="kinetic-text">DEVELOPMENT INTERACTION </span>
+    </div>
+    <div class="kinetic-row mt-4" id="k-row-2">
+      <span class="kinetic-text">CREATIVE INNOVATION </span>
+      <span class="kinetic-text filled text-cyan-400">CREATIVE </span>
+      <span class="kinetic-text">INNOVATION CREATIVE </span>
+    </div>
+    <div class="kinetic-row mt-4" id="k-row-3">
+      <span class="kinetic-text">EXPERIENCE </span>
+      <span class="kinetic-text filled text-purple-500">EXPERIENCE </span>
+      <span class="kinetic-text">EXPERIENCE EXPERIENCE </span>
+    </div>
+
+    <div
+      class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b061f] to-transparent z-10 h-32 pointer-events-none">
+    </div>
+  </section>
+
+  <!-- 8. VELOCITY SKEW EFFECT -->
+  <section class="velocity-section overflow-hidden">
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Velocity Skew</h2>
+      <p class="text-slate-400 text-lg">Scroll ke atas dan ke bawah dengan <strong class="text-cyan-400">cepat</strong>
+        untuk melihat efek kartu miring akibat gaya gravitasi.</p>
+    </div>
+    <div class="max-w-3xl mx-auto flex flex-col gap-16 px-6" id="skew-container">
+      <div
+        class="skew-item w-full h-[300px] rounded-[3rem] bg-gradient-to-tr from-rose-500 to-orange-400 flex items-center justify-center shadow-[0_30px_60px_rgba(244,63,94,0.3)]">
+        <h3 class="text-4xl md:text-5xl font-black text-white drop-shadow-lg tracking-widest uppercase">Dinamis</h3>
+      </div>
+      <div
+        class="skew-item w-full h-[300px] rounded-[3rem] bg-gradient-to-tr from-blue-500 to-emerald-400 flex items-center justify-center shadow-[0_30px_60px_rgba(59,130,246,0.3)]">
+        <h3 class="text-4xl md:text-5xl font-black text-white drop-shadow-lg tracking-widest uppercase">Fisika</h3>
+      </div>
+      <div
+        class="skew-item w-full h-[300px] rounded-[3rem] bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center shadow-[0_30px_60px_rgba(168,85,247,0.3)]">
+        <h3 class="text-4xl md:text-5xl font-black text-white drop-shadow-lg tracking-widest uppercase">Responsif</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CLIP-PATH EXPAND REVEAL -->
+  <section class="clip-section" id="clip-section">
+    <div class="clip-sticky">
+      <!-- Elemen ini diam di belakang layar sebelum lensa terbuka -->
+      <div class="absolute text-center z-10 pointer-events-none">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Transisi Lensa</h2>
+        <p class="text-slate-400 text-lg">Terus scroll untuk membuka dimensi warna-warni dari tengah</p>
+      </div>
+
+      <!-- Konten berwarna ini akan membesar menutupi layar -->
+      <div class="clip-content" id="clip-content">
+        <h2 class="text-6xl md:text-[8rem] font-black text-white drop-shadow-2xl mb-6 tracking-tighter">MELEDAK</h2>
+        <p
+          class="text-xl md:text-3xl text-white/90 font-semibold max-w-3xl text-center px-6 drop-shadow-md leading-relaxed">
+          Menggunakan properti <code class="bg-black/30 px-3 py-1 rounded-lg">clip-path</code> CSS untuk menciptakan
+          ilusi penyingkapan ruang secara melingkar.
+        </p>
+        <button
+          class="mt-12 px-10 py-5 bg-white text-pink-600 font-black text-xl rounded-full hover:scale-110 hover:shadow-[0_0_40px_rgba(255,255,255,0.5)] transition-all duration-300">
+          Luar Biasa
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. BAGIAN EFEK FADE-IN / REVEAL ON SCROLL -->
+  <section class="py-32 px-6 relative border-t border-white/5 bg-[#0b061f] z-10 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20 animate-on-scroll reveal-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Reveal on Scroll</h2>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+          Koleksi efek kemunculan elemen (Fade-in) dari berbagai arah yang dipicu secara otomatis ketika elemen tersebut
+          masuk ke dalam layar.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- Fade In Murni -->
+        <div class="glass-card p-8 rounded-3xl animate-on-scroll fade-in border border-white/10">
+          <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6 text-white font-bold">1
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Fade In</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Elemen muncul perlahan dari blur menjadi jelas tanpa ada
+            pergerakan posisi.</p>
+        </div>
+
+        <!-- Fade Left (Dari Kiri) -->
+        <div class="glass-card p-8 rounded-3xl animate-on-scroll fade-left delay-100 border border-white/10">
+          <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6 text-white font-bold">2
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Fade Left</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Elemen bergeser masuk dari arah kiri sambil secara bertahap
+            memunculkan opacity.</p>
+        </div>
+
+        <!-- Fade Right (Dari Kanan) -->
+        <div class="glass-card p-8 rounded-3xl animate-on-scroll fade-right delay-200 border border-white/10">
+          <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6 text-white font-bold">3
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Fade Right</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Elemen bergeser masuk dari arah kanan, memberikan variasi
+            silang yang dinamis.</p>
+        </div>
+
+        <!-- Scale In (Membesar) -->
+        <div class="glass-card p-8 rounded-3xl animate-on-scroll scale-in delay-300 border border-white/10">
+          <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-6 text-white font-bold">4
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Scale In</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Elemen berawal dari ukuran yang lebih kecil dan membesar ke
+            ukuran normalnya.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. KONTEN PENUTUP (Perjalanan Selesai) -->
+  <main class="content-section py-32 px-6 relative border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-24 animate-on-scroll reveal-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Perjalanan Selesai</h2>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+          Anda telah melewati efek Parallax, menembus Portal dimensi, melihat sekuensi fitur ala Framer, dan memutar
+          Galeri 3D.
+        </p>
+      </div>
+
+      <!-- Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+        <div class="glass-card p-10 rounded-3xl animate-on-scroll slide-3d-left">
+          <div
+            class="w-16 h-16 bg-purple-600/20 text-purple-400 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/30">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold mb-4 text-white">Vektor Murni</h3>
+          <p class="text-slate-400 leading-relaxed text-lg">Gunung-gunung di atas dibuat 100% menggunakan kode SVG
+            inline. Tidak ada gambar statis yang berat.</p>
+        </div>
+
+        <div class="glass-card p-10 rounded-3xl animate-on-scroll slide-3d-right delay-200">
+          <div
+            class="w-16 h-16 bg-cyan-600/20 text-cyan-400 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/30">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold mb-4 text-white">JavaScript Ringan</h3>
+          <p class="text-slate-400 leading-relaxed text-lg">Semua efek kompleks ini murni menggunakan manipulasi DOM
+            ringan dan CSS 3D transforms.</p>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center animate-on-scroll reveal-up">
+        <button
+          class="bg-white text-[#0b061f] px-10 py-4 rounded-full font-bold text-xl hover:bg-slate-200 transition duration-300 shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:scale-105"
+          onclick="window.scrollTo(0,0)">
+          Kembali ke Atas
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-black text-slate-500 text-center py-8 relative z-10 border-t border-white/5">
+    <p>&copy; 2026 Efek Mountain Parallax & Animasi Scroll.</p>
+  </footer>
+
+
+  <!-- LOGIKA JAVASCRIPT UNTUK PARALLAX & SCROLL ANIMATION -->
+  <script src="script.js"></script>
+</body>
+
+</html>
