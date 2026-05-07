@@ -7,9 +7,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: #0b061f;
+  background-color: #f1f5f9;
   /* Warna latar gelap menyatu dengan gunung depan */
-  color: #f8fafc;
+  color: #1e293b;
   overflow-x: hidden;
 }
 
@@ -47,7 +47,7 @@ body {
   min-height: 250px;
   background: url('logopertamina.png') center/contain no-repeat;
   z-index: 1;
-  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.1));
 }
 
 /* SVG & Image Mountains agar ukurannya proporsional di semua layar */
@@ -81,12 +81,12 @@ body {
   position: absolute;
   font-family: 'Oswald', sans-serif;
   font-size: 8vw;
-  color: #fff;
+  color: #1e293b;
   text-transform: uppercase;
   letter-spacing: 0.5vw;
   z-index: 3;
   /* Teks berada di antara gunung belakang dan gunung tengah */
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
 }
 
@@ -173,22 +173,22 @@ body {
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 .glass-card:hover {
   transform: translateY(-10px);
-  border-color: rgba(168, 85, 247, 0.5);
+  border-color: rgba(220, 38, 38, 0.5);
 }
 
 /* Bagian konten menutupi parallax saat di-scroll */
 .content-section {
   position: relative;
   z-index: 10;
-  background-color: #0b061f;
+  background-color: #f1f5f9;
 }
 
 /* --- 3D SPIRAL SCROLL CLASSES --- */
@@ -196,7 +196,7 @@ body {
   position: relative;
   height: 350vh;
   /* Memberikan ruang scroll yang sangat panjang */
-  background-color: #0b061f;
+  background-color: #f1f5f9;
   z-index: 10;
 }
 
@@ -228,15 +228,15 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 24px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01));
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.01));
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.05);
+  color: #1e293b;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(0, 0, 0, 0.05);
   /* Kartu di belakang akan terlihat tembus pandang memukau berkat backdrop-filter */
 }
 
@@ -245,7 +245,7 @@ body {
   position: relative;
   height: 400vh;
   /* Memberikan panjang scroll setara 4 layar */
-  background-color: #03010a;
+  background-color: #ffffff;
   /* Warna latar sangat gelap */
   z-index: 10;
 }
@@ -314,7 +314,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: #0b061f;
+  background-color: #f1f5f9;
   /* Transisi warna dari Parallax yang lebih menyatu */
 }
 
@@ -345,7 +345,7 @@ body {
   justify-content: center;
   transform-origin: center center;
   will-change: transform, opacity;
-  background: url('bgrajaampat.png') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
 }
 
 /* Logo di tengah layar saat zoom */
@@ -354,7 +354,7 @@ body {
   width: 300px;
   height: 300px;
   background: url('logodeo.png') center/contain no-repeat;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
   z-index: 15;
 }
 
@@ -375,7 +375,7 @@ body {
   position: relative;
   height: 400vh;
   /* Memberikan ruang scroll vertikal sepanjang 4 layar */
-  background-color: #0b061f;
+  background-color: #f1f5f9;
   z-index: 10;
 }
 
@@ -419,7 +419,7 @@ body {
   top: 0;
   left: 0;
   height: 5px;
-  background: linear-gradient(to right, #38bdf8, #a855f7);
+  background: linear-gradient(to right, #dc2626, #16a34a, #2563eb);
   z-index: 9999;
   transform-origin: 0% 50%;
   transform: scaleX(0);
@@ -443,7 +443,7 @@ body {
   display: flex;
   position: relative;
   z-index: 10;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .marquee-content {
@@ -467,7 +467,7 @@ body {
 .text-reveal-section {
   position: relative;
   height: 300vh;
-  background-color: #0b061f;
+  background-color: #f1f5f9;
   z-index: 10;
 }
 
@@ -490,7 +490,7 @@ body {
 .stack-section {
   position: relative;
   padding: 10vh 2rem 20vh 2rem;
-  background-color: #03010a;
+  background-color: #ffffff;
   z-index: 10;
 }
 
@@ -498,14 +498,14 @@ body {
   position: sticky;
   margin-bottom: 50vh;
   /* Jarak scroll antar kartu */
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
 
 /* 5. Sticky Pinning */
 .pinning-section {
   position: relative;
-  background-color: #0b061f;
+  background-color: #f1f5f9;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -533,7 +533,7 @@ body {
 .path-section {
   position: relative;
   height: 300vh;
-  background-color: #03010a;
+  background-color: #ffffff;
   z-index: 10;
 }
 
@@ -559,7 +559,7 @@ body {
 .kinetic-section {
   position: relative;
   height: 100vh;
-  background-color: #03010a;
+  background-color: #ffffff;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -579,17 +579,17 @@ body {
   text-transform: uppercase;
   line-height: 0.9;
   color: transparent;
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.1);
+  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.1);
 }
 
 .kinetic-text.filled {
-  color: #fff;
+  color: #1e293b;
   -webkit-text-stroke: 0;
 }
 
 /* 8. Velocity Skew */
 .velocity-section {
-  background-color: #0b061f;
+  background-color: #f1f5f9;
   padding: 10vh 2rem 20vh 2rem;
   z-index: 10;
   position: relative;
@@ -605,7 +605,7 @@ body {
 .clip-section {
   position: relative;
   height: 300vh;
-  background-color: #0b061f;
+  background-color: #f1f5f9;
   z-index: 11;
 }
 
@@ -617,13 +617,13 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: #0b061f;
+  background-color: #f1f5f9;
 }
 
 .clip-content {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #38bdf8, #8b5cf6, #ec4899);
+  background: linear-gradient(135deg, #dc2626, #16a34a, #2563eb);
   /* Mulai dari lingkaran titik sangat kecil di tengah */
   clip-path: circle(0% at 50% 50%);
   display: flex;
